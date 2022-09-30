@@ -18,7 +18,7 @@ class GradeDialog extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            const Text("You grade is"),
+            const Text("Your grade is"),
             Text("${_examAnswers.grade}/15"),
           ],
         ),

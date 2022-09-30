@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './screens/home.dart';
-import './api.dart';
 import './screens/selected_item_exam.dart';
 
 void main() {

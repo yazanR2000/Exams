@@ -18,15 +18,6 @@ class _SelectedItemExamState extends State<SelectedItemExam> {
     return Scaffold(
       appBar: AppBar(
         title: Text(exam.subject),
-        leading: IconButton(
-          onPressed: () {
-            _examAnswers.clearAswers();
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-          ),
-        ),
       ),
       body: ExamQuestions(exam),
     );

@@ -20,19 +20,25 @@ class _ExamQuestionsState extends State<ExamQuestions> {
 
   bool _checkAnswers = false;
 
+  @override
+  void initState() {
+    super.initState();
+    _examAnswers.clearAswers();
+  }
+
   void _giveMeAnswers() {
     setState(() {
       _checkAnswers = true;
     });
   }
 
-  Widget _trueFalseAnswer(int questionIndex,List<Map<String, dynamic>> choices){
+  Widget _trueFalseAnswer(int questionIndex, List<Map<String, dynamic>> choices) {
     int choiceNum = _examAnswers.asnwers[questionIndex].choiceNum;
     int trueIndex = choices.indexWhere((element) => element['answer'] == true);
-    if(choiceNum == trueIndex){
-      return const Icon(Icons.done_outline_sharp,color: Colors.green);
+    if (choiceNum == trueIndex) {
+      return const Icon(Icons.done_outline_sharp, color: Colors.green);
     }
-    return const Icon(Icons.close,color: Colors.red);
+    return const Icon(Icons.close, color: Colors.red);
   }
 
   @override
@@ -80,7 +86,7 @@ class _ExamQuestionsState extends State<ExamQuestions> {
                                 ],
                               ),
                             ),
-                            if(_checkAnswers)
+                            if (_checkAnswers)
                               _trueFalseAnswer(index, questions[index].choices)
                           ],
                         ),
@@ -116,7 +122,8 @@ class _ExamQuestionsState extends State<ExamQuestions> {
             ),
             if (_checkAnswers)
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: Row(
                   children: [
                     Expanded(
@@ -124,7 +131,7 @@ class _ExamQuestionsState extends State<ExamQuestions> {
                         onPressed: () {
                           setState(() {
                             _examAnswers.clearAswers();
-                          
+
                             _checkAnswers = false;
                           });
                         },

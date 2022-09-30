@@ -22,7 +22,7 @@ class _ExamsState extends State<Exams> {
     Color(0xffCCF2F4),
     Color(0xffA4EBF3),
   ];
-
+  final ExamAnswers _examAnswers = ExamAnswers.getInstance();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

@@ -32,6 +32,7 @@ class _ApiDocumentationState extends State<ApiDocumentation> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: _requests.length,
+      padding: const EdgeInsets.symmetric(vertical: 25),
       itemBuilder: (context, index) {
         return _apiRequest(
             _requests[index]['title'],_requests[index]['subtitle'], _requests[index]['example'], index);
